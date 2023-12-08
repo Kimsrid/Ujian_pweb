@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"><!--untuk mengimport boostrap-->
+    <link rel="stylesheet" href="style.css"> <!--untuk menghubungkan ke css-->
+    <title>Pemesanan Album SM Entertainment</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="header"></div>
+    <h2>Pemesanan Album SM Entertainment</h2>
+    <form id="albumForm"> <!--untuk memberi id form menjadi albumform-->
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" id="nama" required>
+        </div>
+        <div class="form-group"> 
+            <label for="alamat">Alamat</label>
+            <input type="text" class="form-control" id="alamat" required>
+        </div>
+        <div class="form-group">
+            <label for="telepon">Nomor Telepon</label>
+            <input type="tel" class="form-control" id="telepon" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form-group">
+            <label for="album">Pilih Album</label>
+            <select class="form-control" id="album" onchange="tampilkanFotoAlbum()" required>
+                <option value="album1">RedVelvet - Chill Kill</option>
+                <option value="album2">Aespa - Drama</option>
+                <option value="album3">NCT Dream - ISTJ</option>
+                <option value="album4">2022 Winter SM Town: SMCU Palace</option>
+                <option value="album5">SHinee - Hard</option>
+            </select>
+        </div>
+        <img id="fotoAlbum" src="" alt="Foto Album" class="img-fluid mt-2" width="200" height="200">
+        <div class="form-group">
+            <label for="jumlahPesanan">Jumlah Pesanan</label>
+            <input type="number" class="form-control" id="jumlahPesanan" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="simpanData()">Pesan</button>
+    </form>
+
+    <div class="mt-4">
+        <h3>Daftar Pemesanan</h3>
+        <table class="table"> <!--membuat tabel buat data yg sudah di input-->
+            <thead>
+                <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Nomor Telepon</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Jumlah Pesanan</th>
+                    <th scope="col">Foto Album</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="daftarPemesanan"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script> <!--script buat bootstrap-->
+
+</body>
+</html>
